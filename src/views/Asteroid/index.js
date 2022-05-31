@@ -1,9 +1,20 @@
+
+// Libraries
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useQuery from "../../hooks/useQuery";
-import {API_KEY} from "../../constants";
+
+// Components
 import TemplatePage from "../../components/TemplatePage";
+
+// Hooks
+import useQuery from "../../hooks/useQuery";
+
+// Constants
+import { API_KEY } from "../../constants";
+
+// Styles
 import styles from './style.module.scss';
+
 
 const Asteroid = () => {
   const { id } = useParams();

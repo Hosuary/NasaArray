@@ -1,3 +1,5 @@
+
+// Libraries
 import moment from "moment";
 import 'moment/locale/ru';
 
@@ -33,10 +35,13 @@ export const getPartsOfDatesObjects = (start_date, end_date) => {
     });
   }
 
+  const defaultLabel = `${moment(start_date).format('DD MMM YYYY')} - ${moment(end_date).format('DD MMM YYYY')}`;
+  const oneDayLabel = `${moment(start_date).format('DD MMM YYYY')}`
+
   return [
     {
       id: 1,
-      label: `${moment(start_date).format('DD MMM YYYY')} - ${moment(end_date).format('DD MMM YYYY')}`,
+      label: countOfDaysBetweenDates === 0 ? oneDayLabel : defaultLabel,
       start_date,
       end_date
     }

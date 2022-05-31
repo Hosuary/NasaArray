@@ -1,5 +1,6 @@
 {
-  "name": "TapShop",
+  "name": "NasaArray",
+  "homepage": "NasaArray",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

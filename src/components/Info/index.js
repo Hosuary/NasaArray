@@ -1,25 +1,33 @@
 
 // Libraries
 import React from 'react';
+import moment from "moment";
+
+// Methods
+import { getFormatDate } from "../../methods";
 
 // Components
 import Divider  from '../Divider';
 
 // Styles
 import styles from './style.module.scss';
-import {getFormatDate} from "../../methods";
 
 
 const Info = ({ filters, asteroids }) => {
   const { element_count: asteroids_count } = asteroids;
   const { start_date, end_date } = filters;
 
+  const countOfDaysBetweenDates = moment(end_date).diff(moment(start_date), 'days');
+
+  const defaultLabel = `Графики за даты с ${start_date && getFormatDate(start_date)} по ${end_date && getFormatDate(end_date)}`;
+  const oneDayLabel = `Графики за дату ${start_date && getFormatDate(start_date)}`;
+
   return (
     <div className={styles.Info}>
       <Divider />
       {start_date && end_date && (
         <div className={styles.Description}>
-          Графики за даты с {getFormatDate(start_date)} по {getFormatDate(end_date)}
+          {countOfDaysBetweenDates === 0 ? oneDayLabel : defaultLabel}
         </div>
       )}
       {asteroids && (

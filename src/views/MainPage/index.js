@@ -1,27 +1,26 @@
 
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import moment from "moment";
+import { Button } from "@mui/material";
 
 // Components
-import Filters from "../../components/Filters";
 import Info from "../../components/Info";
 import Tabs from "../../components/Tabs";
-import Loader from "../../components/Loader";
 import TemplatePage from "../../components/TemplatePage";
 
 // Hooks
-import useQuery from "../../hooks/useQuery";
 import useFilters from "../../hooks/useFilters";
+import useChainQuery from "../../hooks/useChainQuery";
+
+// Methods
+import { getFormatDate, getPartsOfDatesObjects } from "../../methods";
 
 // Constants
 import {API_KEY, LOADING_STATUSES} from "../../constants";
 
 // Styles
 import styles from './style.module.scss';
-import {Button} from "@mui/material";
-import moment from "moment";
-import {getFormatDate, getPartsOfDatesObjects} from "../../methods";
-import {useChainQuery} from "../../hooks/useChainQuery";
 
 
 const MainPage = () => {
@@ -30,7 +29,9 @@ const MainPage = () => {
   const [emptyData, setEmptyData] = useState(false);
 
   const chainQueryData = getPartsOfDatesObjects(filters.start_date, filters.end_date);
-  const { loadings, callQueries } = useChainQuery(
+  const { loadings, callQueries } = useChainQuery();
+
+  const fetchAsteroids = () => Promise.all(callQueries(
     chainQueryData.map(({ id, label, start_date, end_date, status }) => ({
       id,
       queryUrl: `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start_date}&end_date=${end_date}&api_key=${API_KEY}`,
@@ -40,9 +41,7 @@ const MainPage = () => {
         label
       }
     }))
-  );
-
-  const fetchAsteroids = () => Promise.all(callQueries()).then((data) => {
+  )).then((data) => {
     const mergedData = data.reduce((reducer, { element_count, near_earth_objects }) => ({
       element_count: reducer.element_count + element_count,
       near_earth_objects: [

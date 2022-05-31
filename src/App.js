@@ -4,19 +4,16 @@ import React from 'react';
 import { Provider as StoreProvider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import ruLocale from 'date-fns/locale/ru';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 // Views
 import MainPage from "./views/MainPage";
 import Asteroid from "./views/Asteroid";
 import AboutProject from "./views/AboutProject";
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 // Redux
 import store from './store';
-
-// Styles
-import './App.css';
 
 
 function App() {

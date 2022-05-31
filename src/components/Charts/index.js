@@ -19,7 +19,7 @@ const Charts = ({ asteroids }) => {
       <Chart title='Средняя звездная величина астроидов'>
         <CountOfAsteroids near_earth_objects={near_earth_objects} />
       </Chart>
-      <Chart title='Средний потентиальный диаметр астероидов'>
+      <Chart title='Средний потенциальный диаметр астероидов'>
         <AverageEstimatedDiameter near_earth_objects={near_earth_objects} />
       </Chart>
       <Chart title='Количество потенциально опасных астероидов'>

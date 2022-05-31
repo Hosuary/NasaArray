@@ -1,5 +1,5 @@
 
-// Hooks
+// Libraries
 import {
   useDispatch,
   useSelector

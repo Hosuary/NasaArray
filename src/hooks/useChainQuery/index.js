@@ -1,14 +1,15 @@
-import {useState} from "react";
-import {LOADING_STATUSES} from "../../constants";
+
+// Libraries
+import { useState } from "react";
+
+// Constants
+import { LOADING_STATUSES } from "../../constants";
+
 
 const ERRORS = [400, 401, 500, 501];
 
-export const useChainQuery = queries => {
-  const [loadings, setLoadings] = useState(queries.map(query => ({
-    id: query.id,
-    ...query.anotherData,
-    status: LOADING_STATUSES.not_loading
-  })));
+const useChainQuery = () => {
+  const [loadings, setLoadings] = useState([]);
 
   const handleChangeLoading = (propId, propStatus) => setLoadings(prev => {
     const foundLoadingIndex = prev.findIndex(({ id }) => id === propId);
@@ -52,7 +53,13 @@ export const useChainQuery = queries => {
     }
   }
 
-  const callQueries = () => {
+  const callQueries = (queries) => {
+    setLoadings(queries.map(query => ({
+      id: query.id,
+      ...query.anotherData,
+      status: LOADING_STATUSES.not_loading
+    })));
+
     return queries.map(query => callQuery(query))
   };
 
@@ -61,3 +68,5 @@ export const useChainQuery = queries => {
     callQueries
   }
 };
+
+export default useChainQuery;
