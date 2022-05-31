@@ -39,6 +39,7 @@
     "react-dnd-touch-backend": "^14.1.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.14.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-input-colorpicker": "^1.0.13",
     "react-modal": "^3.14.3",
     "react-perfect-scrollbar": "^1.5.8",

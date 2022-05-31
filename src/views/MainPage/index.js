@@ -11,13 +11,14 @@ import TemplatePage from "../../components/TemplatePage";
 
 // Hooks
 import useFilters from "../../hooks/useFilters";
+import useReport from "../../hooks/useReport";
 import useChainQuery from "../../hooks/useChainQuery";
 
 // Methods
 import { getFormatDate, getPartsOfDatesObjects } from "../../methods";
 
 // Constants
-import {API_KEY, LOADING_STATUSES} from "../../constants";
+import { API_KEY, LOADING_STATUSES } from "../../constants";
 
 // Styles
 import styles from './style.module.scss';
@@ -25,7 +26,7 @@ import styles from './style.module.scss';
 
 const MainPage = () => {
   const { filters } = useFilters();
-  const [asteroids, setAsteroids] = useState(null);
+  const { report, setReport } = useReport(null);
   const [emptyData, setEmptyData] = useState(false);
 
   const chainQueryData = getPartsOfDatesObjects(filters.start_date, filters.end_date);
@@ -55,17 +56,13 @@ const MainPage = () => {
       near_earth_objects: []
     });
 
-    setAsteroids(() => {
-      if (mergedData) {
-        setEmptyData(false);
+    if (mergedData) {
+      setEmptyData(false);
 
-        return mergedData;
-      } else {
-        setEmptyData(true);
-      }
-
-      return null;
-    })
+      setReport(mergedData);
+    } else {
+      setEmptyData(true);
+    }
   });
 
   const Empty = () => {
@@ -78,10 +75,10 @@ const MainPage = () => {
     return !emptyData
       ? (
         <>
-          {asteroids && (
+          {report && (
             <>
-              <Info filters={filters} asteroids={asteroids} />
-              <Tabs asteroids={asteroids} />
+              <Info filters={filters} asteroids={report} />
+              <Tabs asteroids={report} />
             </>
           )}
         </>

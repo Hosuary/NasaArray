@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/NasaArray/static/css/main.20b2240c.chunk.css",
+    "main.js": "/NasaArray/static/js/main.01122c4c.chunk.js",
+    "main.js.map": "/NasaArray/static/js/main.01122c4c.chunk.js.map",
+    "runtime-main.js": "/NasaArray/static/js/runtime-main.166e122f.js",
+    "runtime-main.js.map": "/NasaArray/static/js/runtime-main.166e122f.js.map",
+    "static/js/2.db0dbb36.chunk.js": "/NasaArray/static/js/2.db0dbb36.chunk.js",
+    "static/js/2.db0dbb36.chunk.js.map": "/NasaArray/static/js/2.db0dbb36.chunk.js.map",
+    "static/js/3.748ac1c7.chunk.js": "/NasaArray/static/js/3.748ac1c7.chunk.js",
+    "static/js/3.748ac1c7.chunk.js.map": "/NasaArray/static/js/3.748ac1c7.chunk.js.map",
+    "index.html": "/NasaArray/index.html",
+    "static/css/main.20b2240c.chunk.css.map": "/NasaArray/static/css/main.20b2240c.chunk.css.map",
+    "static/js/2.db0dbb36.chunk.js.LICENSE.txt": "/NasaArray/static/js/2.db0dbb36.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/NasaArray/static/media/Mariupol-Regular.1b8a8b13.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.166e122f.js",
+    "static/js/2.db0dbb36.chunk.js",
+    "static/css/main.20b2240c.chunk.css",
+    "static/js/main.01122c4c.chunk.js"
+  ]
+}

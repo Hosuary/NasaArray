@@ -8,14 +8,16 @@ const AverageCountOfDangerous = ({ near_earth_objects }) => {
   const chartData = React.useMemo(() => near_earth_objects
     .map(([date, values]) => ({
       date,
-      countOfDangerous: values.reduce((countOfDangerous, { is_potentially_hazardous_asteroid }) => countOfDangerous + is_potentially_hazardous_asteroid, 0),
+      countOfDangerous: values
+        .filter(({ is_potentially_hazardous_asteroid }) => is_potentially_hazardous_asteroid)
+        .length
     }))
   , [near_earth_objects]);
 
   const CustomTooltip = React.useCallback(({ label }) => {
     if (label) {
       const currentDateData = Object.fromEntries(near_earth_objects)[label];
-      const dangerousAsteroids = currentDateData.filter(is_potentially_hazardous_asteroid => is_potentially_hazardous_asteroid)
+      const dangerousAsteroids = currentDateData.filter(({ is_potentially_hazardous_asteroid }) => is_potentially_hazardous_asteroid)
 
       return (
         <div className={styles.Tooltip}>
@@ -39,7 +41,7 @@ const AverageCountOfDangerous = ({ near_earth_objects }) => {
       <LineChart data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" padding={{ left: 30, right: 30 }} />
-        <YAxis />
+        <YAxis dataKey="countOfDangerous" />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Line type="monotone" name='Количество опасных астероидов' dataKey="countOfDangerous" stroke="tomato" activeDot={{ r: 8 }} />

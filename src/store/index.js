@@ -26,8 +26,23 @@ const filtersReducer = (
   }
 };
 
+const reportReducer = (
+  state = null,
+  action
+) => {
+  switch (action.type) {
+    case 'SET_REPORT': {
+      return action.payload;
+    }
+
+    default:
+      return state;
+  }
+}
+
 const reducers = combineReducers({
   filters: filtersReducer,
+  report: reportReducer
 });
 
 const persistedState = loadState();
@@ -39,6 +54,7 @@ const store = createStore(
 store.subscribe(() => {
   saveState({
     filters: store.getState().filters,
+    report: store.getState().report,
   });
 });
 

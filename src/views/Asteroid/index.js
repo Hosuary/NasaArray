@@ -23,9 +23,8 @@ const Asteroid = () => {
   );
   const [asteroid, setAsteroid] = React.useState(null);
 
-  console.log('asteroid', asteroid)
   React.useEffect(() => {
-    // callQuery().then(setAsteroid);
+    callQuery().then(setAsteroid);
   }, []);
 
   const Asteroid = React.useCallback(() => {
