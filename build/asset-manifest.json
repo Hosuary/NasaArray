@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8cbe3019.chunk.css",
+    "main.js": "/static/js/main.d32169cb.chunk.js",
+    "main.js.map": "/static/js/main.d32169cb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3bfa219f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3bfa219f.js.map",
+    "static/js/2.cad87d44.chunk.js": "/static/js/2.cad87d44.chunk.js",
+    "static/js/2.cad87d44.chunk.js.map": "/static/js/2.cad87d44.chunk.js.map",
+    "static/js/3.7537a749.chunk.js": "/static/js/3.7537a749.chunk.js",
+    "static/js/3.7537a749.chunk.js.map": "/static/js/3.7537a749.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8cbe3019.chunk.css.map": "/static/css/main.8cbe3019.chunk.css.map",
+    "static/js/2.cad87d44.chunk.js.LICENSE.txt": "/static/js/2.cad87d44.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Mariupol-Regular.1b8a8b13.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3bfa219f.js",
+    "static/js/2.cad87d44.chunk.js",
+    "static/css/main.8cbe3019.chunk.css",
+    "static/js/main.d32169cb.chunk.js"
+  ]
+}

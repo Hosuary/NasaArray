@@ -1,0 +1,37 @@
+
+.Header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #2196f3;
+  color: #fff;
+  z-index: 100;
+}
+
+.Wrapper {
+  display: flex;
+  // display: grid;
+  // grid-template-columns: repeat(12, 1fr);
+  padding: 0 20px !important;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.Links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  // grid-column: 4 / 12;
+  grid-gap: 40px;
+}
+
+.Link {
+  font-weight: bold;
+}

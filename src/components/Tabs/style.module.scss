@@ -1,0 +1,28 @@
+
+.Tooltip {
+  padding: 20px 25px;
+  background: #fff;
+  border-radius: 3%;
+  border: 1px solid rgba(0,0,0,0.3);
+
+  &__Title {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__Item {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}
+
+.Charts {
+  width: 100%;
+  height: auto;
+}
+
+.Chart {
+  width: 100%;
+  height: 400px;
+}

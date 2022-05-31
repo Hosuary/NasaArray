@@ -1,0 +1,70 @@
+
+.AsteroidCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.Name {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Radius {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &_small {
+    width: 50%;
+    height: 150px;
+  }
+}
+
+.Divider {
+  width: 95%;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+  margin: 20px auto;
+}
+
+.Label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &_absolute {
+    position: absolute;
+    bottom: 35px;
+  }
+}
+
+.SmallText {
+  display: inline-block;
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.Name {
+  width: 100%;
+  text-align: center;
+}
+
+.Description {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

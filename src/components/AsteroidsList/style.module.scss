@@ -1,0 +1,33 @@
+
+.AsteroidCard {
+  color: black;
+}
+
+.Category {
+  margin-bottom: 50px;
+}
+
+.SearchInput {
+  margin-bottom: 50px;
+}
+
+.EmptyResults {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.Date {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.List {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+}

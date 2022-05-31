@@ -1,0 +1,14 @@
+
+.Empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 140px);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.Button {
+  margin: 20px 0 !important;
+}
