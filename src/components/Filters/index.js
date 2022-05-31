@@ -17,7 +17,7 @@ import useFilters from "../../hooks/useFilters";
 import styles from './style.module.scss';
 
 
-const Filters = () => {
+const Filters = ({ loading }) => {
   const { filters, changeFilters } = useFilters();
 
   const startDatePickerMaxDate = new Date(moment(filters.end_date).format('YYYY-MM-DD'));
@@ -35,6 +35,7 @@ const Filters = () => {
             maxDate={startDatePickerMaxDate}
             onChange={(newValue) => changeFilters({ start_date: moment(newValue).format('YYYY-MM-DD') })}
             renderInput={(params) => <TextField {...params} />}
+            disabled={loading}
           />
         </div>
         <div className={styles.DatePicker}>
@@ -46,6 +47,7 @@ const Filters = () => {
             maxDate={endDatePickerMaxDate}
             onChange={(newValue) => changeFilters({ end_date: moment(newValue).format('YYYY-MM-DD') })}
             renderInput={(params) => <TextField {...params} />}
+            disabled={loading}
           />
         </div>
       </LocalizationProvider>

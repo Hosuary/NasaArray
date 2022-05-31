@@ -15,9 +15,9 @@ const TemplatePage = ({
   loaderData = []
 }) => (
   <div className={styles.Template}>
-    <Header />
+    <Header loading={loading} />
     <Wrapper>
-      {modules.includes('filters') && <Filters />}
+      {modules.includes('filters') && <Filters loading={loading} />}
       <div className={styles.Area}>
         {loading
           ? loaderType === 'default'
