@@ -29,8 +29,8 @@ const AsteroidsMap = ({ asteroids }) => {
         }) => ({
           id,
           name,
-          range: (estimated_diameter_max + estimated_diameter_min) / 2,
-          averageRadius: +close_approach_data[0].miss_distance.astronomical
+          range: +close_approach_data[0].miss_distance.astronomical,
+          averageRadius: (estimated_diameter_max + estimated_diameter_min) / 2,
         }))
       }
     }, {});
