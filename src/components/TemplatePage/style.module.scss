@@ -5,7 +5,8 @@
 }
 
 .Area {
-  min-height: 50vh;
+  min-height: content-box;
+  height: 100%;
 }
 
 .Row {

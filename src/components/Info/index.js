@@ -24,7 +24,6 @@ const Info = ({ filters, asteroids }) => {
 
   return (
     <div className={styles.Info}>
-      <Divider />
       {start_date && end_date && (
         <div className={styles.Description}>
           {countOfDaysBetweenDates === 0 ? oneDayLabel : defaultLabel}

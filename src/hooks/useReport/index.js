@@ -6,9 +6,9 @@ import {
 } from "react-redux";
 
 
-const useReport = () => {
+const useReport = (id) => {
   const dispatch = useDispatch();
-  const report = useSelector(store => store.report);
+  const report = useSelector(store => store.reports.hasOwnProperty(id) ? store.reports[id] : null);
 
   return {
     report,

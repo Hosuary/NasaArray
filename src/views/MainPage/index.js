@@ -1,7 +1,8 @@
 
 // Libraries
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import moment from "moment";
+import uuid from "react-uuid";
 import { useNavigate } from "react-router-dom";
 
 // Components
@@ -12,6 +13,7 @@ import TemplatePage from "../../components/TemplatePage";
 // Hooks
 import useFilters from "../../hooks/useFilters";
 import useReport from "../../hooks/useReport";
+import useReports from "../../hooks/useReports";
 import useChainQuery from "../../hooks/useChainQuery";
 
 // Methods
@@ -21,13 +23,13 @@ import { getFormatDate, getPartsOfDatesObjects } from "../../methods";
 import { API_KEY, LOADING_STATUSES } from "../../constants";
 
 // Styles
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 
 const MainPage = () => {
   const navigate = useNavigate();
   const { filters } = useFilters();
-  const { report, setReport } = useReport(null);
+  const { addReport } = useReports();
   const [emptyData, setEmptyData] = useState(false);
 
   const chainQueryData = getPartsOfDatesObjects(filters.start_date, filters.end_date);
@@ -60,32 +62,22 @@ const MainPage = () => {
     if (mergedData) {
       setEmptyData(false);
 
-      setReport(mergedData);
+      const id = uuid();
+
+      addReport({
+        id,
+        date: moment().format('YYYY-MM-DD'),
+        filters,
+        data: mergedData
+      });
+
+      navigate({
+        pathname: `/report/${id}`
+      });
     } else {
       setEmptyData(true);
     }
   });
-
-  const Empty = () => {
-    return (
-      <div className={styles.Empty}>Данных не найдено</div>
-    )
-  };
-
-  const Content = () => {
-    return !emptyData
-      ? (
-        <>
-          {report && (
-            <>
-              <Info filters={filters} asteroids={report} />
-              <Tabs asteroids={report} />
-            </>
-          )}
-        </>
-      )
-      : <Empty />
-  };
 
   const allStatusesIsSuccess = loadings.every(({ status }) => status === LOADING_STATUSES.success);
   const isNotLoaded = loadings.every(({ status }) => status === LOADING_STATUSES.not_loading);
@@ -93,18 +85,16 @@ const MainPage = () => {
   return (
     <TemplatePage
       loading={!allStatusesIsSuccess && !isNotLoaded}
-      loaderType='chain'
+      loaderType="chain"
       loaderData={loadings}
-      modules={['get-graph']}
+      modules={["get-graph"]}
       callbacks={{
         graphCallbacks: {
           downloadCharts: fetchAsteroids,
           stopDownloadCharts: () => navigate(0)
         }
       }}
-    >
-      <Content />
-    </TemplatePage>
+    />
   )
 };
 

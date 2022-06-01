@@ -26,13 +26,20 @@ const filtersReducer = (
   }
 };
 
-const reportReducer = (
-  state = null,
+const reportsReducer = (
+  state = {},
   action
 ) => {
   switch (action.type) {
-    case 'SET_REPORT': {
-      return action.payload;
+    case 'ADD_REPORT': {
+      return {
+        ...state,
+        [action.payload.id]: {
+          date: action.payload.date,
+          filters: action.payload.filters,
+          data: action.payload.data
+        }
+      };
     }
 
     default:
@@ -42,7 +49,7 @@ const reportReducer = (
 
 const reducers = combineReducers({
   filters: filtersReducer,
-  report: reportReducer
+  reports: reportsReducer
 });
 
 const persistedState = loadState();
@@ -54,7 +61,7 @@ const store = createStore(
 store.subscribe(() => {
   saveState({
     filters: store.getState().filters,
-    report: store.getState().report,
+    reports: store.getState().reports,
   });
 });
 

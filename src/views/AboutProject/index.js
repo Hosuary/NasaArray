@@ -4,7 +4,7 @@ import TemplatePage from "../../components/TemplatePage";
 const AboutProject = () => {
   return (
     <TemplatePage>
-      ИНФО
+      Данный проект был создан для интереса
     </TemplatePage>
   )
 };

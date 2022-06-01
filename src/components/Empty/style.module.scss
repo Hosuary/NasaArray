@@ -1,0 +1,21 @@
+
+.Empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90%;
+}
+
+.Image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+.Label {
+  font-size: 22px;
+}

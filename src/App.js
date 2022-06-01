@@ -9,8 +9,8 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 // Views
 import MainPage from "./views/MainPage";
-import Asteroid from "./views/Asteroid";
 import AboutProject from "./views/AboutProject";
+import Reports from "./views/Reports";
 import Report from "./views/Report";
 
 // Redux
@@ -25,8 +25,8 @@ function App() {
           <Router>
             <Routes>
               <Route path="/create_new_report" element={<MainPage />} />
-              <Route path="/settings" element={<AboutProject />} />
-              <Route path="/previous_reports" element={<Asteroid />} />
+              <Route path="/previous_reports" element={<Reports />} />
+              <Route path="/about_project" element={<AboutProject />} />
               <Route path="/report/:id" element={<Report />} />
               <Route path="/" element={<MainPage />} />
             </Routes>

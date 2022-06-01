@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import AddchartOutlinedIcon from '@mui/icons-material/AddchartOutlined';
 import InsertChartOutlinedTwoTone from '@mui/icons-material/InsertChartOutlinedTwoTone';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 
 const TABS = [
@@ -23,9 +23,9 @@ const TABS = [
   },
   {
     id: 'settings',
-    Icon: SettingsOutlinedIcon,
-    label: 'Настройки',
-    link: '/settings'
+    Icon: HelpOutlineIcon,
+    label: 'О проекте',
+    link: '/about_project'
   },
 ]
 
