@@ -5,5 +5,11 @@
 }
 
 .Area {
-  height: 50vh;
+  min-height: 50vh;
+}
+
+.Row {
+  display: flex;
+  width: calc(100% - 300px);
+  margin-left: auto;
 }

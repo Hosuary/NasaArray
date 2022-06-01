@@ -1,0 +1,52 @@
+
+.ConstructStage {
+  display: flex;
+  height: 55px;
+}
+
+.DownloadStage {
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+}
+
+.DatePicker {
+  margin-right: 10px !important;
+}
+
+.StartButton {
+  margin-left: 30px !important;
+}
+
+.Label {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.StageName {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.3);
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+}
+
+.LoadingPercent {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.Loader {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  color: rgba(0,0,0,0.7);
+}
+
+.StopButton {
+  fill: red;
+}

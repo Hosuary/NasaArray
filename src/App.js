@@ -11,6 +11,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import MainPage from "./views/MainPage";
 import Asteroid from "./views/Asteroid";
 import AboutProject from "./views/AboutProject";
+import Report from "./views/Report";
 
 // Redux
 import store from './store';
@@ -23,8 +24,10 @@ function App() {
         <LocalizationProvider dateAdapter={AdapterDateFns} locale={ruLocale}>
           <Router>
             <Routes>
-              <Route path="/asteroid/:id" element={<Asteroid />} />
-              <Route path="/about_project" element={<AboutProject />} />
+              <Route path="/create_new_report" element={<MainPage />} />
+              <Route path="/settings" element={<AboutProject />} />
+              <Route path="/previous_reports" element={<Asteroid />} />
+              <Route path="/report/:id" element={<Report />} />
               <Route path="/" element={<MainPage />} />
             </Routes>
           </Router>

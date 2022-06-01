@@ -2,7 +2,7 @@
 // Libraries
 import React, { useState } from 'react';
 import moment from "moment";
-import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import Info from "../../components/Info";
@@ -25,6 +25,7 @@ import styles from './style.module.scss';
 
 
 const MainPage = () => {
+  const navigate = useNavigate();
   const { filters } = useFilters();
   const { report, setReport } = useReport(null);
   const [emptyData, setEmptyData] = useState(false);
@@ -94,15 +95,14 @@ const MainPage = () => {
       loading={!allStatusesIsSuccess && !isNotLoaded}
       loaderType='chain'
       loaderData={loadings}
-      modules={['filters']}
+      modules={['get-graph']}
+      callbacks={{
+        graphCallbacks: {
+          downloadCharts: fetchAsteroids,
+          stopDownloadCharts: () => navigate(0)
+        }
+      }}
     >
-      <Button
-        variant="outlined"
-        onClick={fetchAsteroids}
-        className={styles.Button}
-      >
-        Поcтроить графики
-      </Button>
       <Content />
     </TemplatePage>
   )

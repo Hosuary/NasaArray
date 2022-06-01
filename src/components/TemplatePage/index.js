@@ -1,32 +1,39 @@
 import React from 'react';
-import Filters from "../Filters";
 import styles from './style.module.scss';
 import Loader from "../Loader";
-import Header from "../Header";
 import Wrapper from "../Wrapper";
 import ChainLoader from "../ChainLoader";
+import SidePanel from "../SidePanel";
+import GetGraphs from "../GetGraphs";
 
 
 const TemplatePage = ({
   children,
   loading ,
   modules = [],
+  callbacks,
   loaderType = 'default',
   loaderData = []
 }) => (
   <div className={styles.Template}>
-    <Header loading={loading} />
-    <Wrapper>
-      {modules.includes('filters') && <Filters loading={loading} />}
-      <div className={styles.Area}>
-        {loading
-          ? loaderType === 'default'
-            ? <Loader />
-            : <ChainLoader loaderData={loaderData} />
-          : children
-        }
-      </div>
-    </Wrapper>
+    <div className={styles.Row}>
+      <SidePanel />
+      <Wrapper>
+        {modules.includes('get-graph') && (
+          <GetGraphs
+            loading={loading}
+            loaderData={loaderData}
+            callbacks={callbacks.graphCallbacks}
+          />
+        )}
+        <div className={styles.Area}>
+          {loading
+            ? loaderType === 'default' && <Loader />
+            : children
+          }
+        </div>
+      </Wrapper>
+    </div>
   </div>
 );
 

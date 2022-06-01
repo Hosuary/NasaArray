@@ -104,7 +104,7 @@ const AsteroidsMap = ({ asteroids }) => {
             margin={{ top: 20, right: 20, bottom: 10, left: 10 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="range" name="diameter" unit=" астр" />
+            <XAxis type="number" dataKey="range" name="diameter" unit=" астр" />
             <YAxis dataKey="averageRadius" name="range" unit=" км" />
             <Legend />
             <Tooltip name="id" content={props => <CustomTooltip {...props} date={date} />} />
