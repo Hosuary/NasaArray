@@ -49,3 +49,7 @@ img {
   width: 100%;
   height: 100%;
 }
+
+.MuiTabs-scrollButtons.Mui-disabled {
+  opacity: 0.3 !important;
+}

@@ -30,4 +30,47 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
+  width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.Name {
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+.Stat {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.Type {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.Value {
+  word-break: break-word;
+
+  &_link {
+    color: #1976d2;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.Actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-bottom: -20px;
 }

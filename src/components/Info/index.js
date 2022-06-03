@@ -19,8 +19,8 @@ const Info = ({ filters, asteroids }) => {
 
   const countOfDaysBetweenDates = moment(end_date).diff(moment(start_date), 'days');
 
-  const defaultLabel = `Графики за даты с ${start_date && getFormatDate(start_date)} по ${end_date && getFormatDate(end_date)}`;
-  const oneDayLabel = `Графики за дату ${start_date && getFormatDate(start_date)}`;
+  const defaultLabel = `Отчет за даты с ${start_date && getFormatDate(start_date)} по ${end_date && getFormatDate(end_date)}`;
+  const oneDayLabel = `Отчет за дату ${start_date && getFormatDate(start_date)}`;
 
   return (
     <div className={styles.Info}>

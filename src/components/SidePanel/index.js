@@ -6,6 +6,9 @@ import classnames from "classnames";
 import AddchartOutlinedIcon from '@mui/icons-material/AddchartOutlined';
 import InsertChartOutlinedTwoTone from '@mui/icons-material/InsertChartOutlinedTwoTone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import useFullWidthSidePanel from "../../hooks/useFullWidthSidePanel";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 const TABS = [
@@ -34,6 +37,7 @@ const SidePanel = () => {
   const foundIDByLink = TABS.find(({ link }) => currentLink === link)?.id;
 
   const [selectedItem, setSelectedItem] = React.useState(foundIDByLink);
+  const { isFullWidthPanel, setIsFullWidthPanel } = useFullWidthSidePanel();
 
   const Logo = React.useCallback(() => (
     <div className={styles.Logo}>
@@ -71,14 +75,17 @@ const SidePanel = () => {
 
   const ChangerSize = () => {
     return (
-      <div className={styles.ChangerSize}>
-
+      <div
+        className={styles.ChangerSize}
+        onClick={() => setIsFullWidthPanel(!isFullWidthPanel)}
+      >
+        {isFullWidthPanel ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
       </div>
     )
   };
 
   return (
-    <div className={styles.SidePanel}>
+    <div className={classnames(styles.SidePanel, !isFullWidthPanel && styles.SidePanel_mini)}>
       <Logo />
       <Tabs />
       <ChangerSize />

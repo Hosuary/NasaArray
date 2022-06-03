@@ -13,4 +13,8 @@
   display: flex;
   width: calc(100% - 300px);
   margin-left: auto;
+
+  &_full {
+    width: calc(100% - 70px);
+  }
 }

@@ -45,11 +45,26 @@ const reportsReducer = (
     default:
       return state;
   }
-}
+};
+
+const fullWidthPanelReducer = (
+  state = true,
+  action
+) => {
+  switch (action.type) {
+    case 'SET_FULL_WIDTH_PANEL': {
+      return action.payload
+    }
+
+    default:
+      return state;
+  }
+};
 
 const reducers = combineReducers({
   filters: filtersReducer,
-  reports: reportsReducer
+  reports: reportsReducer,
+  fullWidthPanel: fullWidthPanelReducer
 });
 
 const persistedState = loadState();
@@ -62,6 +77,7 @@ store.subscribe(() => {
   saveState({
     filters: store.getState().filters,
     reports: store.getState().reports,
+    fullWidthPanel: store.getState().fullWidthPanel
   });
 });
 

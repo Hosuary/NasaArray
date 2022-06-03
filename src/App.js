@@ -15,6 +15,7 @@ import Report from "./views/Report";
 
 // Redux
 import store from './store';
+import Asteroid from "./views/Asteroid";
 
 
 function App() {

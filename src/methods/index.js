@@ -19,7 +19,7 @@ export const getPartsOfDatesObjects = (start_date, end_date) => {
       const startDate = momentObjStartDate.clone().add(7 * i, 'days');
       const endDate = startDate.clone().add(
         countOfDaysBetweenDates < 6 * (i + 1)
-          ? 6 * (i + 1) - countOfDaysBetweenDates
+          ? 6 * (i + 1) - countOfDaysBetweenDates - 1
           : 6
       , 'days');
 
