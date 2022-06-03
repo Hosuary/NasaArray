@@ -8,6 +8,8 @@ import TabPanel from '@mui/lab/TabPanel';
 import Charts from "../Charts";
 import AsteroidsList from "../AsteroidsList";
 import AsteroidsMap from "../AsteroidsMap";
+import styles from './style.module.scss';
+
 
 const Tabs = ({ asteroids }) => {
   const [tab, setTab] = React.useState('1');
@@ -24,16 +26,16 @@ const Tabs = ({ asteroids }) => {
         >
           <Tab label="Средние значения" value="1" />ч
           <Tab label="Относительные показатели" value="2" />
-          <Tab label="Список астероидов" value="4" />
+          <Tab label="Список астероидов" value="3" />
         </TabList>
       </Box>
-      <TabPanel value="1">
+      <TabPanel value="1" classes={{ root: styles.TabPanel }}>
         <Charts asteroids={asteroids} />
       </TabPanel>
-      <TabPanel value="2">
+      <TabPanel value="2" classes={{ root: styles.TabPanel }}>
         <AsteroidsMap asteroids={asteroids} />
       </TabPanel>
-      <TabPanel value="4">
+      <TabPanel value="3" classes={{ root: styles.TabPanel }}>
         <AsteroidsList asteroids={asteroids} />
       </TabPanel>
     </TabContext>

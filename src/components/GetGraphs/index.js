@@ -79,30 +79,32 @@ const GetGraphs = ({ loading, loaderData, callbacks }) => {
   ), [filters, loading]);
 
   const DownloadStage = React.useCallback(() => (
-    <div className={styles.DownloadStage}>
-      <div className={styles.Info}>
-        <div className={styles.Label}>
-          Загрузка...
-        </div>
-        <div className={styles.StageName}>
-          Получено {countOfLoadedCharts} из {loaderData.length} блоков данных
-        </div>
-      </div>
-      <div className={styles.Actions}>
-        <div className={styles.Loader}>
-          <div className={styles.LoadingPercent}>
-            {loadingPercent}%
+    <div className={styles.Container}>
+      <div className={styles.DownloadStage}>
+        <div className={styles.Info}>
+          <div className={styles.Label}>
+            Загрузка...
           </div>
-          <CircularProgress variant="determinate" value={+loadingPercent} />
+          <div className={styles.StageName}>
+            Получено {countOfLoadedCharts} из {loaderData.length} блоков данных
+          </div>
         </div>
-        <Button
-          variant='contained'
-          className={styles.StopButton}
-          startIcon={<StopCircleOutlinedIcon />}
-          onClick={callbacks.stopDownloadCharts}
-        >
-          Остановить загрузку
-        </Button>
+        <div className={styles.Actions}>
+          <div className={styles.Loader}>
+            <div className={styles.LoadingPercent}>
+              {loadingPercent}%
+            </div>
+            <CircularProgress variant="determinate" value={+loadingPercent} />
+          </div>
+          <Button
+            variant='contained'
+            className={styles.StopButton}
+            startIcon={<StopCircleOutlinedIcon />}
+            onClick={callbacks.stopDownloadCharts}
+          >
+            Остановить загрузку
+          </Button>
+        </div>
       </div>
     </div>
   ), [loading, loadingPercent])
