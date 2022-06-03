@@ -104,8 +104,6 @@ const AsteroidsList = ({ asteroids }) => {
     </div>
   );
 
-  console.log(modalData)
-
   return (
     <div>
       <SearchInput
