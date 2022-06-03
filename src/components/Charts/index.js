@@ -16,7 +16,7 @@ const Charts = ({ asteroids }) => {
 
   return (
     <div className={styles.Charts}>
-      <Chart title='Средняя звездная величина астроидов'>
+      <Chart title='Средняя звездная величина астероидов'>
         <CountOfAsteroids near_earth_objects={near_earth_objects} />
       </Chart>
       <Chart title='Средний потенциальный диаметр астероидов'>

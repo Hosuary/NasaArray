@@ -18,17 +18,19 @@ const Tabs = ({ asteroids }) => {
 
   return (
     <TabContext value={tab}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <TabList
-          variant="scrollable"
-          onChange={handleChangeTab}
-          aria-label="lab API tabs example"
-        >
-          <Tab label="Средние значения" value="1" />ч
-          <Tab label="Относительные показатели" value="2" />
-          <Tab label="Список астероидов" value="3" />
-        </TabList>
-      </Box>
+      <div className={styles.TabList}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList
+            variant="scrollable"
+            onChange={handleChangeTab}
+            aria-label="lab API tabs example"
+          >
+            <Tab label="Средние значения" value="1" />ч
+            <Tab label="Относительные показатели" value="2" />
+            <Tab label="Список астероидов" value="3" />
+          </TabList>
+        </Box>
+      </div>
       <TabPanel value="1" classes={{ root: styles.TabPanel }}>
         <Charts asteroids={asteroids} />
       </TabPanel>
